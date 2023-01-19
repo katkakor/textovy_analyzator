@@ -3,12 +3,13 @@ projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Kateřina Kordiovská
 email: kordiovskak@gmail.com
 discord: Katerina K#9622
+
 """
 
 #Vyžádá si od uživatele přihlašovací jméno a heslo,
 user = input("Name:")
 password = input("Password:")
-cara = "-" * 40
+line = "-" * 40
 registrovani_uzivatele = {
     "bob": "123",
     "ann": "pass123",
@@ -48,9 +49,9 @@ if registrovani_uzivatele.get(user) == password:
 #pokud je registrovaný, pozdrav jej a umožni mu analyzovat texty,
     print(f"Username", {user})
     print(f"Password", {password})
-    print(cara)
+    print(line)
     print(f"Welcome to the app, {user} \nWe have 3 texts to be analyzed.")
-    print(cara)
+    print(line)
 #pokud není registrovaný, upozorni jej a ukonči program
 else:
     print(f"username", {user})
@@ -63,7 +64,7 @@ selected_text = (input(f"Enter a number btw. 1 and 3 to select: "))
 #Pokud uživatel vybere takové číslo textu, které není v zadání, program jej upozorní a skončí,
 #pokud uživatel zadá jiný vstup než číslo, program jej rovněž upozorní a skončí.
 if selected_text.isnumeric() and int(selected_text) >= 1 and int(selected_text) <=3:
-    print(cara)
+    print(line)
 else:
     print("The entered credentials are not right terminating the program")
     quit()
@@ -122,14 +123,6 @@ for a in mezery:
 # pridani slov a cetnost slov se stejnym poctem do slovniku 
 novy_slovnik = dict()
 for x in ocistena_slova:
-    if x not in novy_slovnik:
-        novy_slovnik[x] = 1        
-    else:
-        novy_slovnik[x] = novy_slovnik[x] + 1
-
-# pridani slov a cetnost slov se stejnym poctem do slovniku 
-novy_slovnik = dict()
-for x in ocistena_slova:
     if len(x) not in novy_slovnik:
         novy_slovnik[len(x)] = 1        
     else:
@@ -137,9 +130,9 @@ for x in ocistena_slova:
 
 # serazeni
 serazeno = sorted(novy_slovnik.items())
-print(cara)
+print(line)
 print("LEN|".ljust(2), "\tOCCURENCES","|NR.".rjust(5))
-print(cara)
+print(line)
 # vypsani cetnosti slov
 for index, symbol in serazeno:
      print(str(index).rjust(2), "|", symbol*"*", (12-symbol+1)*" ", "|", str(symbol))
